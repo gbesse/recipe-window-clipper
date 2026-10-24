@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "recipe-window-clipper"
+version = "0.1.0a1"
+description = "FR: Trouver la région exacte de réglages satisfaisant une recette | EN: Find the exact settings region satisfying a process recipe | ES: Encontrar la región exacta de ajustes que satisface una receta"
+requires-python = ">=3.11"
+license = "MIT"
+
+[project.scripts]
+recipe-window-clipper = "recipe_window_clipper.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["recipe_window_clipper*"]

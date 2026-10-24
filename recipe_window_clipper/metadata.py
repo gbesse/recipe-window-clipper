@@ -1,0 +1,1 @@
+DESCRIPTION = {'fr': 'Trouver la région exacte de réglages satisfaisant une recette', 'en': 'Find the exact settings region satisfying a process recipe', 'es': 'Encontrar la región exacta de ajustes que satisface una receta'}
