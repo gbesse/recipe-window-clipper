@@ -72,3 +72,9 @@ Pruebas de dominio, casos límite e interfaz FR/EN/ES. CI prueba Python 3.11/3.1
 ## Sources / Fuentes
 
 - https://www.nist.gov/programs-projects/metrology-real-time-monitoring-additive-manufacturing
+
+FR — alpha.2 borne l’exposant décimal avant de construire la fraction, afin de refuser les entrées extrêmes sans allocation disproportionnée.
+
+EN — alpha.2 bounds decimal exponents before constructing a fraction, rejecting extreme inputs without disproportionate allocation.
+
+ES — alpha.2 limita exponentes decimales antes de construir la fracción, rechazando entradas extremas sin asignación desproporcionada.

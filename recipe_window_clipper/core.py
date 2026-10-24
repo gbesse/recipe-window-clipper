@@ -1,8 +1,11 @@
 from fractions import Fraction as F
+import re
 from .common import unique_ids
 
 def exact(x):
  if isinstance(x,bool)or not isinstance(x,(str,int,float))or len(str(x))>50:raise ValueError('rational')
+ exponent=re.search(r'[eE]([+-]?\d+)$',str(x))
+ if exponent and abs(int(exponent.group(1)))>50:raise ValueError('exponent_bound')
  v=F(str(x))
  if abs(v)>10**12:raise ValueError('bounds')
  return v

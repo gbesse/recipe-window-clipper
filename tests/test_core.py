@@ -12,3 +12,10 @@ class Tests(unittest.TestCase):
  def test_boundary_point_is_feasible(self):
   r=run({'bounds':{'x':[1,1],'y':[2,2]},'constraints':[{'id':'c','a':1,'b':1,'max':3}]});self.assertTrue(r['feasible']);self.assertEqual(r['vertices'],[['1','2']]);self.assertEqual(r['area'],'0')
  def test_zero_coefficient_contradiction(self):self.assertFalse(run({'bounds':{'x':[0,1],'y':[0,1]},'constraints':[{'id':'impossible','a':0,'b':0,'max':-1}]})['feasible'])
+
+class ExponentBounds(unittest.TestCase):
+ def test_extreme_exponent_refused_before_fraction_allocation(self):
+  from recipe_window_clipper.core import exact
+  for raw in ('1e1000000000','1e-1000000000'):
+   with self.assertRaises(ValueError):exact(raw)
+  self.assertEqual(exact('1e-3'),F(1,1000))
